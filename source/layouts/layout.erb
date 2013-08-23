@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=7,IE=9,IE=10">
+
+	<title><%= data.config.metaTitle ? data.config.metaTitle : data.advancedSettings.appName + " | An Esri Story Maps" %></title>
+
+	<meta name="author" content="<%= data.config.metaAuthor ? data.config.metaAuthor : "Esri" %>">
+	<meta name="keywords" content="<%= data.config.metaKeywords ? data.config.metaKeywords : "Story Map" %>">
+	<meta name="description" content="<%= data.config.metaDescription ? data.config.metaDescription : data.config.subtitle %>">
+
+	<!--Facebook Open Graph-->
+	<meta property="og:title" content="<%= data.config.title ? data.config.title : data.advancedSettings.appName + " | An Esri Story Map" %>" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="<%= data.config.metaSocialURL ? data.config.metaSocialURL : "" %>" />
+	<meta property="og:image" content="<%= data.config.metaThumbnailURL ? data.config.metaThumbnailURL : "" %>" />
+	<meta property="og:site_name" content="<%= data.config.metaSiteName ? data.config.metaSiteName : "" %>" />
+	<meta property="og:description" content="<%= data.config.metaDescription ? data.config.metaDescription : data.config.subtitle %>"/>
+	<meta property="fb:app_id" content="<%= data.config.metaFacebookId ? data.config.metaFacebookId : "" %>" />
+	<!--End Facebook-->
+
+	<!--Twitter Card Data-->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@<%= data.config.metaTwitterHandle ? data.config.metaTwitterHandle : "EsriStoryMaps" %>">
+	<meta name="twitter:url" content="<%= data.config.metaSocialURL ? data.config.metaSocialURL : "" %>">
+	<meta name="twitter:title" content="<%= data.config.metaTitle ? data.config.metaTitle : data.advancedSettings.appName + " | An Esri Story Maps" %>">
+	<meta name="twitter:description" content="<%= data.config.metaDescription ? data.config.metaDescription : data.config.subtitle %>">
+	<meta name="twitter:image" content="<%= data.config.metaThumbnailURL ? data.config.metaThumbnailURL : "" %>">
+	<!--Twitter Card Data-->
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+	<link type="image/ico" rel="shortcut icon" href="<%= data.config.metaShortcutURL ? data.config.metaShortcutURL : "//resources.esri.com/favicon.ico" %>">
+	<link type="image/ico" rel="icon" href="<%= data.config.metaFaviconURL ? data.config.metaFaviconURL : "//resources.esri.com/favicon.ico" %>">
+
+	<!-- load Avenir from fonts.com  this is will only work on localhost, arcgis.com or esri.com domains -->
+	<link type="text/css" rel="stylesheet" href="//fast.fonts.com/cssapi/4a60d16b-c9e4-404d-89d3-809adb97d65c.css"/>
+	<link rel="stylesheet" href="//js.arcgis.com/3.6/js/esri/css/esri.css">
+	<%= stylesheet_link_tag "main" %>
+
+	<!--[if lt IE 9]>
+	<script src="lib/selectivizr-min.js" type="text/javascript"></script>
+	<script src="lib/html5shiv.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<script type="text/javascript">
+		var dojoConfig = {
+			parseOnLoad: true,
+			isDebug: false,
+			useDeferredInstrumentation: true,
+			packages: [
+			{
+				name: 'storymaps',
+				location: location.pathname.replace(/\/[^/]+$/, '/') + 'javascripts'
+			},
+			{
+				name: 'lib',
+				location: location.pathname.replace(/\/[^/]+$/, '/') + 'javascripts/externals'
+			}//,
+			// {
+			// 	name: 'esriTemplate',
+			// 	location: location.pathname.replace(/\/[^/]+$/, '/') + 'resources'
+			// }
+			]
+		};
+	</script>
+
+	<!--Social Media Links-->
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">
+		stLight.options({publisher: "77225c91-2742-42f7-b1b4-bddda99a9bde"});
+	</script>
+	<!--END Social Media Links-->
+	<!--Google Analytics Start-->
+	<script type="text/javascript">
+		if (window.location.href.toLowerCase().indexOf("storymaps.esri.com") >= 0) {
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-26529417-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		}
+	</script>
+	<!--Google Analytics End-->
+
+</head>
+<body class="<%= page_classes %>">
+	
+	<%= data.advancedSettings.builder ? "" : "<!--" %>
+	<div id="builder-menu" class="region-top">
+		<header id="header">
+			<div class="container">
+				<div class="row">
+					<div class="column-24">
+						<a href="/">
+							<h2 id="site-logo"><%= data.advancedSettings.appName %> Builder</h2>
+						</a>
+						<nav>
+							<ul>
+								<li><a href="index.html">Settings</a></li>
+								<li><a href="index.html">Preview</a></li>
+								<li><a href="about.html">Discard</a></li>
+								<li><a href="about.html">Save</a></li>
+							</ul>
+						</nav>
+						<a href="http://esri.com/" id="esri-logo">Esri</a>
+					</div>
+				</div>
+			</div>
+		</header>
+	</div>
+	<%= data.advancedSettings.builder ? "" : "-->" %>
+
+	<div id="view-content" class="region-center">
+	
+		<div id="banner" class="region-top">
+
+			<div id="header-text" class="region-center">
+				<h1 id="title"><%= data.config.title ? data.config.title : "Add title here" %></h1>
+				<h2 id="subtitle"><%= data.config.subtitle ? data.config.subtitle : "Add subtitle here" %></h2>
+			</div><!--/header-text-->
+
+			<div id="branding-wrapper" class="region-right">
+				<div id="social">
+					<a id="smLink" href="http://storymaps.esri.com" target="_blank">A story map </a>
+					<span class="st_facebook"></span>
+					<span class="st_twitter"></span>
+					<span class="st_sharethis"></span>
+				</div><!--/social-->
+				<div id="logo">
+					<a id="logoLink" href="http://www.esri.com" target="_blank">
+						<img id="logoImg" src="/images/esriGlobeLogow.png" alt="Esri - Home">
+					</a><!--/logoLink-->
+				</div><!--/logo-->
+			</div><!--/branding-wrapper-->
+
+		</div><!--/banner-->
+
+		<div id="content" class="region-center">
+			<%= yield %>
+		</div>
+
+	</div><!--/view-content-->
+
+	<script src="//js.arcgis.com/3.6/"></script>
+	<script type="text/javascript">
+		require(["storymaps/Core"],function(Core){
+			Core.init();
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+# Used in various strings in index.html
+appName: Geo-blog
+# Does the app have a "builder" mode
+builder: true
