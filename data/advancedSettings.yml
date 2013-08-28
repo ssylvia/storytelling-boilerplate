@@ -1,4 +1,10 @@
 # Used in various strings in index.html
-appName: Geo-blog
+appName: App Name
 # Does the app have a "builder" mode
-builder: true
+builder: false
+
+
+# Social Media App IDs/API Keys
+
+# Facebook Developers app id (Create new app ID at https://developers.facebook.com/apps)
+FacebookAppId: 475867552452282

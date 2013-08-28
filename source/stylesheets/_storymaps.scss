@@ -88,6 +88,19 @@ html, body{
 		decoration: none;
 	}
 	outline:none;
+	&:hover{
+		text: {
+			decoration: underline;
+		}
+	}
+}
+
+.social-share{
+	color: $light-gray;
+	cursor: pointer;
+	&:hover{
+		color: $white;
+	}
 }
 
 #logo{

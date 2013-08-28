@@ -14,8 +14,6 @@ metaSocialURL: http://storymaps.esri.com
 metaThumbnailURL: http://sample.com/thumbnail.png
 # Website/Organization's name to be used in sharing to Facebook and Twitter
 metaSiteName: Esri
-# Facebook Developers app id (Create new app ID at https://developers.facebook.com/apps)
-metaFacebookId: 475867552452282
 # Twitter Handle to be used while sharing app on Twitter
 metaTwitterHandle: EsriStoryMaps
 # Favicon URL

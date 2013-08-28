@@ -17,7 +17,7 @@
 	<meta property="og:image" content="<%= data.config.metaThumbnailURL ? data.config.metaThumbnailURL : "" %>" />
 	<meta property="og:site_name" content="<%= data.config.metaSiteName ? data.config.metaSiteName : "" %>" />
 	<meta property="og:description" content="<%= data.config.metaDescription ? data.config.metaDescription : data.config.subtitle %>"/>
-	<meta property="fb:app_id" content="<%= data.config.metaFacebookId ? data.config.metaFacebookId : "" %>" />
+	<meta property="fb:app_id" content="<%= data.advancedSettings.FacebookAppId ? data.advancedSettings.FacebookAppId : "" %>" />
 	<!--End Facebook-->
 
 	<!--Twitter Card Data-->
@@ -68,12 +68,6 @@
 		};
 	</script>
 
-	<!--Social Media Links-->
-	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-	<script type="text/javascript">
-		stLight.options({publisher: "77225c91-2742-42f7-b1b4-bddda99a9bde"});
-	</script>
-	<!--END Social Media Links-->
 	<!--Google Analytics Start-->
 	<script type="text/javascript">
 		if (window.location.href.toLowerCase().indexOf("storymaps.esri.com") >= 0) {
@@ -93,30 +87,9 @@
 </head>
 <body class="<%= page_classes %>">
 	
-	<%= data.advancedSettings.builder ? "" : "<!--" %>
-	<div id="builder-menu" class="region-top">
-		<header id="header">
-			<div class="container">
-				<div class="row">
-					<div class="column-24">
-						<a href="/">
-							<h2 id="site-logo"><%= data.advancedSettings.appName %> Builder</h2>
-						</a>
-						<nav>
-							<ul>
-								<li><a href="index.html">Settings</a></li>
-								<li><a href="index.html">Preview</a></li>
-								<li><a href="about.html">Discard</a></li>
-								<li><a href="about.html">Save</a></li>
-							</ul>
-						</nav>
-						<a href="http://esri.com/" id="esri-logo">Esri</a>
-					</div>
-				</div>
-			</div>
-		</header>
-	</div>
-	<%= data.advancedSettings.builder ? "" : "-->" %>
+	<% if data.advancedSettings.builder %>
+		<%= partial "layouts/builderMenu" %>
+	<% end %>
 
 	<div id="view-content" class="region-center">
 	
@@ -129,10 +102,10 @@
 
 			<div id="branding-wrapper" class="region-right">
 				<div id="social">
-					<a id="smLink" href="http://storymaps.esri.com" target="_blank">A story map </a>
-					<span class="st_facebook"></span>
-					<span class="st_twitter"></span>
-					<span class="st_sharethis"></span>
+					<a id="smLink" href="http://storymaps.esri.com" target="_blank">A story map</a>&nbsp;
+					<span class="icon-facebook social-share"></span>
+					<span class="icon-twitter social-share"></span>
+					<span class="icon-share social-share"></span>
 				</div><!--/social-->
 				<div id="logo">
 					<a id="logoLink" href="http://www.esri.com" target="_blank">
@@ -145,7 +118,7 @@
 
 		<div id="content" class="region-center">
 			<%= yield %>
-		</div>
+		</div><!--/content-->
 
 	</div><!--/view-content-->
 
