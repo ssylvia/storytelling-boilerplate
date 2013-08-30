@@ -2,18 +2,18 @@
 
 require "arcgis-framework"
 
-module runGrunt
+module GruntJS
     class << self
         def registered(app)
             app.after_build do |builder|
-                # system 'node r.js -o build/javascripts/app.build.js';
+                # exec('node r.js -o build/javascripts/app.build.js');
             end
         end
         alias :included :registered
     end
 end
 
-::Middleman::Extensions.register(:run_grunt, runGrunt)
+::Middleman::Extensions.register(:run_grunt, GruntJS)
 
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'

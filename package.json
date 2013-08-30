@@ -1,0 +1,20 @@
+{
+  "name": "storytelling-boilerplate",
+  "version": "0.1.0",
+  "description": "Boilerplate for storytelling apps, templates, and builder apps",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ssylvia/storytelling-boilerplate.git"
+  },
+  "author": "Esri Story Maps",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ssylvia/storytelling-boilerplate/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.2"
+  }
+}
