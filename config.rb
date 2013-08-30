@@ -6,7 +6,7 @@ module GruntJS
     class << self
         def registered(app)
             app.after_build do |builder|
-                # exec('node r.js -o build/javascripts/app.build.js');
+                system 'grunt';
             end
         end
         alias :included :registered

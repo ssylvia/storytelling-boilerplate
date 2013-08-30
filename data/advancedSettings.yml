@@ -1,5 +1,7 @@
 # Used in various strings in index.html
 appName: App Name
+# Single word app identifier to be used in build files and build process
+appIdentifier: AppIdentifier
 # Does the app have a "builder" mode
 builder: false
 

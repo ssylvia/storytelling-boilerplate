@@ -6,7 +6,7 @@ define(["lib/jquery/jquery-1.10.2.min","storymaps/utils/SocialSharing"],
 	* 
 	* Collection of helper functions
 	*
-	 Dependencies: Jquery 1.10.2
+	Dependencies: Jquery 1.10.2
 	*/
 
 
