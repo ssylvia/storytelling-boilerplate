@@ -17,12 +17,13 @@ end
 
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
-set :images_dir, 'images'
+set :images_dir, 'resources/images'
+set :fonts_dir, 'resources/fonts'
 
 configure :build do
 
 activate :minify_css
-activate :run_grunt
+# activate :run_grunt
 
 activate :relative_assets
 
