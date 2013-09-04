@@ -226,3 +226,8 @@ pip-log.txt
 
 sftp-config.json
 sftp-config-alt.json
+
+#############
+## Node Modules
+#############
+node_modules/
