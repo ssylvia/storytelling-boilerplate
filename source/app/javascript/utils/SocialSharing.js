@@ -1,5 +1,5 @@
 define(["lib/jquery/jquery-1.10.2.min"], 
-	function(Jquery){
+	function(){
 	/**
 	* Social Sharing
 	* @class Social Sharing

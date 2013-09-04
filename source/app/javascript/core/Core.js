@@ -1,5 +1,5 @@
-define(["lib/jquery/jquery-1.10.2.min","esri/map","storymaps/utils/Helper"],
-	function(Jquery,Map,Helper){
+define(["storymaps/utils/Helper"],
+	function(){
 
 		/**
 		* Core

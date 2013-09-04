@@ -7,35 +7,41 @@ module.exports = function(grunt) {
 		advSettings: grunt.file.readYAML('data/advancedSettings.yml'),
 
 		jshint: {
-			files: ['source/javascripts/**/*.js'],
+			files: ['source/app/javascript/**/*.js'],
 			options: {jshintrc: '.jshintrc'}
 		},
 
 		clean: {
 
-			build: ['build/javascripts/*'],
+			build: ['build/app/javascript/*'],
 			jsLib: ['build/lib']
 
 		},
 
 		uglify: {
-			jsLib: {
-				files: [{
-					expand: true,
-					cwd: 'source/lib',
-					src:['**/*.js','!**/*.min.js','!**/*-min.js'],
-					dest: 'build/lib'
-				}]
-			}
 		},
 
 		concat: {
 			options: {
 				separator: ';'
-			},
-			jsLib: {
-				src: ['source/lib/**/*.js'],
-				dest: 'build/lib/<%= advSettings.appIdentifier %>-lib.min.js'
+			}
+		},
+
+		requirejs: {
+			viewer: {
+				options: {
+					baseUrl: "source",
+					paths: {
+						'dojo': 'empty:',
+						'esri': 'empty:',
+						'dijit': 'empty:',
+						'dojox': 'empty:',
+						'storymaps': 'app/javascript',
+						'lib': 'lib'
+					},
+					name: 'resources/buildTools/config/ConfigViewer',
+					out: 'build/app/javascript/<%= advSettings.appIdentifier %>-app-viewer.min.js'
+				}
 			}
 		}
 
@@ -51,14 +57,8 @@ module.exports = function(grunt) {
 	// Default task(s).
 	grunt.registerTask('default', [
 
-		//'jshint',
+		'jshint',
 		'clean:build',
-
-		/*
-		* Minify and concat external libraries JS using uglify
-		*/
-		'uglify:jsLib',
-		'concat:jsLib',
 
 		/*
 		* Minify project JS using require.js
@@ -66,6 +66,7 @@ module.exports = function(grunt) {
 		* - concat those .js with lib's JS
 		* - perform production mode replacement in JS files
 		*/
+		'requirejs'
 
 	]);
 

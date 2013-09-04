@@ -54,7 +54,7 @@
 			packages: [
 			{
 				name: 'storymaps',
-				location: location.pathname.replace(/\/[^/]+$/, '/') + 'javascripts'
+				location: location.pathname.replace(/\/[^/]+$/, '/') + 'app/javascript'
 			},
 			{
 				name: 'lib',
@@ -124,7 +124,7 @@
 
 	<script src="//js.arcgis.com/3.6/"></script>
 	<script type="text/javascript">
-		require(["storymaps/Core"],function(Core){
+		require(["storymaps/core/Core"],function(Core){
 			Core.init();
 		});
 	</script>

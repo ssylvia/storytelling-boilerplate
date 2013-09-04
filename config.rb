@@ -15,15 +15,16 @@ end
 
 ::Middleman::Extensions.register(:run_grunt, GruntJS)
 
-set :css_dir, 'stylesheets'
-set :js_dir, 'javascripts'
+set :css_dir, 'app/stylesheets'
+set :js_dir, 'app/javascript'
 set :images_dir, 'resources/images'
 set :fonts_dir, 'resources/fonts'
+
 
 configure :build do
 
 activate :minify_css
-# activate :run_grunt
+activate :run_grunt
 
 activate :relative_assets
 

@@ -1,5 +1,5 @@
 define(["lib/jquery/jquery-1.10.2.min","storymaps/utils/SocialSharing"], 
-	function(Jquery,Sharing){
+	function(){
 	/**
 	* Helper
 	* @class Helper
@@ -42,5 +42,5 @@ define(["lib/jquery/jquery-1.10.2.min","storymaps/utils/SocialSharing"],
 				}
 			});
 		}
-	}
+	};
 });
