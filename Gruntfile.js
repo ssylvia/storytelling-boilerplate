@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 						'lib': 'lib'
 					},
 					name: 'resources/buildTools/config/ConfigViewer',
-					out: 'build/app/javascript/<%= advSettings.appIdentifier %>-app-viewer.min.js'
+					out: 'build/app/javascript/<%= advSettings.appIdentifier %>-viewer.min.js'
 				}
 			}
 		}

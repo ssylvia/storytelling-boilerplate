@@ -1,3 +1,5 @@
+# APP SETTINGS
+
 # Used in various strings in index.html
 appName: App Name
 # Single word app identifier to be used in build files and build process
@@ -6,7 +8,17 @@ appIdentifier: AppIdentifier
 builder: false
 
 
-# Social Media App IDs/API Keys
+# ARCGIS JAVASCRIPT API
+
+# ArcGIS Javascript API Version
+apiVersion: '3.6'
+# Include Dijits CSS
+includeDijitCSS: true
+# Dojo Dijits CSS Theme (Choose: Claro, Tundra, Nihilo, Soria)
+dijitsTheme: tundra
+
+
+# SOCIAL MEDIA APP IDS/API KEYS
 
 # Facebook Developers app id (Create new app ID at https://developers.facebook.com/apps)
 FacebookAppId: 475867552452282

@@ -1,3 +1,10 @@
+# GOOGLE ANALYTICS
+
+# Include Google Analytics
+includeAnalytics: true
+# Google Analytics Tracking ID
+trackingId: UA-26529417-1
+
 # META & OPENGRAPH TAGS
 
 # title of story map
