@@ -19,12 +19,12 @@ set :css_dir, 'app/stylesheets'
 set :js_dir, 'app/javascript'
 set :images_dir, 'resources/images'
 set :fonts_dir, 'resources/fonts'
-set :isBuilding, false
+set :isProduction, false
 
 
 configure :build do
 
-set :isBuilding, true
+set :isProduction, true
 
 activate :minify_css
 activate :run_grunt
