@@ -70,25 +70,15 @@
 			]
 		};
 	</script>
-	<% if data.config.includeAnalytics && data.config.trackingId %>
-	<!--Google Analytics Start-->
-		<script type="text/javascript">
-			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', '<%= data.config.trackingId %>']);
-			_gaq.push(['_trackPageview']);
-
-			(function() {
-				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-			})();
-		</script>
-	<!--Google Analytics End-->
-	<% end %>
 
 </head>
 <body class="<%= data.advancedSettings.includeDijitCSS && data.advancedSettings.dijitsTheme ? data.advancedSettings.dijitsTheme : "" %>">
 	
+	<div id="app-load-screen">
+		<div id="loader"></div>
+		<h4 id="loading-message">Loading <%= data.advancedSettings.appName %></h4>
+	</div>
+
 	<% if data.advancedSettings.builder %>
 	<%= partial "layouts/builderMenu" %>
 	<% end %>
@@ -122,18 +112,32 @@
 			<%= yield %>
 		</div><!--/content-->
 
-	</div><!--/view-content-->
-
+	</div><!--/view-content-->	
 	
+	<% if data.config.includeAnalytics && data.config.trackingId %>
+	<!--Google Analytics Start-->
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', '<%= data.config.trackingId %>']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+	<!--Google Analytics End-->
+	<% end %>
 	<%= javascript_include_tag "//js" + (data.advancedSettings.useDevAPI ? "dev" : "") + ".arcgis.com/" + data.advancedSettings.apiVersion + "/" %>
 	<% if isProduction %>
 		<%= javascript_include_tag data.advancedSettings.appIdentifier + "-viewer.min.js" %>
 	<% else %>
-		<script type="text/javascript">
-			require(["storymaps/core/Core"],function(Core){
-				Core.init();
-			});
-		</script>
+	<script type="text/javascript">
+		require(["storymaps/core/Core"],function(Core){
+			Core.init();
+		});
+	</script>
 	<% end %>
 </body>
 </html>

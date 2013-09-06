@@ -21,7 +21,6 @@ set :images_dir, 'resources/images'
 set :fonts_dir, 'resources/fonts'
 set :isProduction, false
 
-
 configure :build do
 
 set :isProduction, true

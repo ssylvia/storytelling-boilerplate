@@ -5,6 +5,35 @@ html, body{
 	overflow: hidden;
 }
 
+#app-load-screen{
+	position: fixed;
+	background: {
+		color: $lightest-gray;
+	}
+	height: 100%;
+	width: 100%;
+	z-index: 1000;
+}
+
+#loader{
+	position: fixed;
+	top: 50%;
+	right: 50%
+}
+
+#loading-message{
+	position: fixed;
+	top: 50%;
+	right: 30%;
+	width: 40%;
+	text: {
+		align: center;
+	}
+	margin: {
+		top: 65px;
+	}
+}
+
 .region-right{
 	position: absolute;
 	right: 0;
@@ -40,14 +69,6 @@ html, body{
 	ol{
 		list-style-type: decimal;
 	}
-}
-
-.loader{
-	display: none;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	z-index: 100;
 }
 
 // Hide builder toolbar in view mode

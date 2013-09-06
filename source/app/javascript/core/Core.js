@@ -1,5 +1,5 @@
 define(["storymaps/utils/Helper"],
-	function(){
+	function(Helper){
 
 		/**
 		* Core
@@ -10,8 +10,19 @@ define(["storymaps/utils/Helper"],
 		* Dependencies: Jquery 1.10.2
 		*/
 
-		function init () {
-			// Do Something
+		function init ()
+		{
+			
+			Helper.enableRegionLayout();
+			setTimeout(function(){
+				appReady();
+			},2000);
+
+		}
+
+		function appReady()
+		{
+			Helper.removeLoadScreen()
 		}
 
 		return {
