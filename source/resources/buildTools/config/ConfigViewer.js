@@ -2,6 +2,6 @@ require(
 	[
 		"storymaps/core/Core"
 	],
-	function(){
-
+	function(Core){
+		Core.init();
 });

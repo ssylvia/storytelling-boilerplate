@@ -83,6 +83,7 @@
 	<%= partial "layouts/builderMenu" %>
 	<% end %>
 
+
 	<div id="view-content" class="region-center">
 	
 		<div id="banner" class="region-top">
@@ -130,14 +131,15 @@
 	<!--Google Analytics End-->
 	<% end %>
 	<%= javascript_include_tag "//js" + (data.advancedSettings.useDevAPI ? "dev" : "") + ".arcgis.com/" + data.advancedSettings.apiVersion + "/" %>
-	<% if isProduction %>
-		<%= javascript_include_tag data.advancedSettings.appIdentifier + "-viewer.min.js" %>
-	<% else %>
 	<script type="text/javascript">
+	<% if isProduction %>
+		require(["app/javascript/<%= data.advancedSettings.appIdentifier %>-viewer.min.js"]);
+	<% else %>
 		require(["storymaps/core/Core"],function(Core){
 			Core.init();
 		});
-	</script>
+
 	<% end %>
+	</script>
 </body>
 </html>

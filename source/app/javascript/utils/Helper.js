@@ -1,12 +1,12 @@
 define(["lib/spin.min.js","lib/jquery/jquery-1.10.2.min","storymaps/utils/SocialSharing"], 
-	function(Loader){
+	function(Spinner){
 	/**
 	* Helper
 	* @class Helper
 	* 
 	* Collection of helper functions
 	*
-	Dependencies: Jquery 1.10.2
+	* Dependencies: Jquery 1.10.2
 	*/
 
 	// Show ajax laoder on load
@@ -36,7 +36,7 @@ define(["lib/spin.min.js","lib/jquery/jquery-1.10.2.min","storymaps/utils/Social
 		};
 
 		var target = document.getElementById(elementId);
-		var loader = new Loader(options).spin(target);
+		var loader = new Spinner(options).spin(target);
 
 		return loader;
 	}

@@ -1,11 +1,9 @@
 # APP SETTINGS
 
-# Used in various strings in index.html
+# Used in various strings in within live app
 appName: App Name
 # Single word app identifier to be used in build files and build process
 appIdentifier: AppIdentifier
-# Is this a configurable template
-configTemplate: true
 # Does the app have a "builder" mode
 builder: false
 

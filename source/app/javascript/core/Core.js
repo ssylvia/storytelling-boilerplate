@@ -12,7 +12,6 @@ define(["storymaps/utils/Helper"],
 
 		function init ()
 		{
-			
 			Helper.enableRegionLayout();
 			setTimeout(function(){
 				appReady();
@@ -22,7 +21,7 @@ define(["storymaps/utils/Helper"],
 
 		function appReady()
 		{
-			Helper.removeLoadScreen()
+			Helper.removeLoadScreen();
 		}
 
 		return {
