@@ -79,10 +79,18 @@
 		<h4 id="loading-message">Loading <%= data.advancedSettings.appName %></h4>
 	</div>
 
+	<div id="bitly-overlay" class="modal bitly-modal">
+		<a class="icon-close right" onclick="$('.bitly-modal').removeClass('visible');"></a>		
+		<h4>Bitly link to share</h4>
+		<br>
+		<a id="bitly-link" target="_blank"></a>
+		<br>
+		<div id="bitly-copy" class="btn primary" onclick="$('.bitly-modal').removeClass('visible');">Close</div>
+	</div>
+
 	<% if data.advancedSettings.builder %>
 	<%= partial "layouts/builderMenu" %>
 	<% end %>
-
 
 	<div id="view-content" class="region-center">
 	

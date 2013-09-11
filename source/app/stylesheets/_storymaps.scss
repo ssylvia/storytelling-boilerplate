@@ -124,6 +124,27 @@ html, body{
 	}
 }
 
+.bitly-modal{
+	text-align: center;
+	height: auto;
+	overflow: hidden;
+	h4 {
+		text-align: left;
+	}
+}
+
+#bitly-link{
+	font: {
+		size: 26px;
+	}
+}
+
+#bitly-copy{
+	margin: {
+		top: 24px;
+	}
+}
+
 #logo{
 	margin: {
 		right: 25px;
